@@ -20,10 +20,12 @@ function nextPage() {
   currentPage++;
   document.getElementById(`page${currentPage}`).classList.remove("hidden");
 
-  if (currentPage === 3) initShraddha();
+ if (currentPage === 3) initShraddha();
 if (currentPage === 4) initFlowers();
-if (currentPage === 6) initPigPop();
-if (currentPage === 7) initPuzzle();
+if (currentPage === 6) initCandleWish();
+if (currentPage === 8) initPigPop();
+if (currentPage === 9) initPuzzle();
+
 
 }
 
@@ -42,6 +44,28 @@ function showMessage(text) {
     messageBox.classList.add("hidden");
   }, 2000);
 }
+
+/* Candle Wish Page */
+function initCandleWish() {
+  const candle = document.getElementById("candle");
+  const flame = document.getElementById("flame");
+  const wishMsg = document.getElementById("wishMsg");
+
+  wishMsg.textContent = "";
+
+  candle.onclick = () => {
+    if (flame.style.display === "none") return;
+
+    flame.style.display = "none";
+
+    wishMsg.textContent =
+      "🌸 Wish made! I hope all your dreams come true Makdin 💖";
+
+    confettiPop();
+    showMessage("🕯️ Candle blown! Cutie moment!");
+  };
+}
+
 
 /* Celebration Shower */
 function confettiPop() {
@@ -117,14 +141,14 @@ function initShraddha() {
   msgBox.textContent = "";
 
   const letters = [
-    { l: "S", msg: "S - My smile is always with you 💖" },
-    { l: "H", msg: "H - Happiness is seeing you happy 🌸" },
-    { l: "R", msg: "R - Radiant like sunshine ☀️" },
-    { l: "A", msg: "A - Always special to me ✨" },
-    { l: "D", msg: "D - Dream girl forever 💕" },
-    { l: "D", msg: "D - Dearest person in my life ❤️" },
-    { l: "H", msg: "H - Heart full of love for you 💝" },
-    { l: "A", msg: "A - Always and forever mine 🌷" }
+    { l: "S", msg: "S - for sweetuuu kasa gulabjam srki sweet ahes ragvti hi agdi sweet " },
+    { l: "H", msg: "H - for happiness ata yaat jast ky bolu tu asli ki me hasto smjla " },
+    { l: "R", msg: "R - for radki nusta nusta swtala underestimate krnar and blame krnar" },
+    { l: "A", msg: "A - for angry bird nusta raag naka vr asto kahi bolla ka nko jaude krti meee tu nko kruu....." },
+    { l: "D", msg: "D - for dreamgirl kisi shayar ki gazal meri dreamgirl " },
+    { l: "D", msg: "D - for dil ki dhadkan kharch tu ali teva pasun asa bhari bhari vatta na makdeee" },
+    { l: "H", msg: "H - for life ch hydrogen because without you maza pani (H2o) hi incomplete ahe , and without Hydrogen Oxygen hi nahi so you you are my life " },
+    { l: "A", msg: "A - for aareeee bhhaaaiii and tuza te signature move   🌷" }
   ];
 
   let clicked = 0;
@@ -143,9 +167,15 @@ function initShraddha() {
       msgBox.textContent = item.msg;
 
       if (clicked === 8) {
-        msgBox.textContent = "Unlocked! Now go next 🌸";
-        nextBtn.classList.remove("hidden");
-      }
+  // ✅ Do NOT overwrite last message
+  nextBtn.classList.remove("hidden");
+
+  // Optional: show unlock message separately after 1.5s
+  setTimeout(() => {
+    showMessage("Unlocked! Now go next 🌸");
+  }, 1500);
+}
+
     };
 
     container.appendChild(btn);
