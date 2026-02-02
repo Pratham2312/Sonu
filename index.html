@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Sonu 💌</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Envelope -->
+    <div class="envelope-container" id="envelope">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="letter-front">
+          <p>💌 Tap the Stamp</p>
+          <div class="stamp" id="openBtn">📮</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book -->
+    <div class="book hidden" id="book">
+      <!-- PAGE 1 -->
+      <div class="page" id="page1">
+        <h1>Welcome Makdin mazi cutiepie 🌸</h1>
+        <h2>Khup chota surprise a tuzya sathi purna bagh 💖</h2>
+        <button class="next-btn" onclick="nextPage()">→</button>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="page hidden" id="page2">
+        <button class="prev-btn" onclick="prevPage()">←</button>
+        <h1>Ala tr baba mazya happiness cha bday tu kiti mothi zalis tri rahshil mazi makdinch 🐒</h1>
+        <h2> B C E F G I J K L M N O P Q T U V W X Y Z</h2>
+        <h3>Just like this jra yaa aplhabets madhun kahi words kadhle tr te kashe incomplete vatta same tasa tuza a mazya life madhe with you im incomplete smjii munna </h3>
+        <button class="next-btn" onclick="nextPage()">→</button>
+      </div>
+
+      <!-- PAGE 3 SHRADDHA -->
+      <div class="page hidden" id="page3">
+        <button class="prev-btn" onclick="prevPage()">←</button>
+
+        <h2>Click kr saglya letters vr 💕( one by one)</h2>
+
+        <div class="shraddha-line" id="shraddhaLine"></div>
+
+        <p id="shraddhaMsg" class="hint-text"></p>
+
+        <!-- Next locked until all clicked -->
+        <button id="unlockNextBtn" class="next-btn hidden" onclick="nextPage()">
+          →
+        </button>
+      </div>
+
+      <!-- PAGE 3 Flowers -->
+      <div class="page hidden" id="page4">
+        <button class="prev-btn" onclick="prevPage()">←</button>
+        <h2>Flowers for you 🌷</h2>
+        <div class="flowers">
+          <span class="flower">🌸</span>
+        </div>
+        <p>(Hello my foool please click on the phool 🌸)</p>
+        <button class="next-btn" onclick="nextPage()">→</button>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="page hidden" id="page5">
+        <button class="prev-btn" onclick="prevPage()">←</button>
+        <h2>I wish apan ashech bestie raho till the end of our life thanks thanks for every moment we shared together 💕</h2>
+        <button class="next-btn" onclick="nextPage()">→</button>
+      </div>
+
+      <!-- PAGE 5 Pig -->
+      <div class="page hidden" id="page6">
+        <button class="prev-btn" onclick="prevPage()">←</button>
+
+        <h1 style="color: #cd4fff">Happy Birthday Makdin 🎂</h1>
+
+        <img
+          id="pigImage"
+          src="monkey.jpg"
+          alt="Cute Pig"
+          class="pig hidden"
+        />
+
+        <button class="next-btn" onclick="nextPage()">→</button>
+      </div>
+
+      <!-- PAGE 6 Puzzle -->
+      <div class="page hidden" id="page7">
+        <button class="prev-btn" onclick="prevPage()">←</button>
+        <h2>Solve this Puzzle 🧩(this was the hardest to code )</h2>
+
+        <div class="puzzle-container">
+          <div id="puzzleBoard"></div>
+        </div>
+
+        <p class="hint-text">Tap 2 pieces to swap 💖</p>
+        <button id="verifyPuzzleBtn" class="verify-btn">Verify Puzzle</button>
+      </div>
+
+      <!-- PAGE 7 Final -->
+      <div class="page hidden" id="page8">
+        <h2>You mean the world to me ❤️</h2>
+
+        <p class="final-msg">
+          Happy Birthday Makdin 💕<br /><br />
+          You are special every single day 🌸<br /><br />
+          Your smile makes life brighter,<br />
+          and I’m always proud of you ❤️<br /><br />
+          Stay happy, stay you… forever.
+          - Tuza makad 
+        </p>
+      </div>
+    </div>
+
+    <!-- Sweet Message Area -->
+    <div id="messageBox" class="message-box hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Animated Cute Background */
+  background: linear-gradient(-45deg, #ffb6d9, #ffd6ff, #ffe6f0, #ffc3e6);
+  body::before {
+    content: "🌸 🎂 🐵 🌹 💖";
+    position: fixed;
+    font-size: 3rem;
+    opacity: 0.12;
+    animation: floatAround 12s linear infinite;
+  }
+
+  @keyframes floatAround {
+    from {
+      transform: translateX(0) translateY(0);
+    }
+    to {
+      transform: translateX(200px) translateY(-200px);
+    }
+  }
+
+  background-size: 400% 400%;
+  animation: bgMove 8s ease infinite;
+
+  overflow: hidden;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Envelope */
+.envelope {
+  width: 280px;
+  height: 180px;
+  background: white;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.letter-front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stamp {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #ff6b81;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background: #bfdbfe;
+  border-radius: 14px 14px 0 0;
+  transform-origin: top;
+  transition: transform 0.6s ease;
+}
+
+/* Book */
+.book {
+  width: 92%;
+  max-width: 420px;
+  height: 75%;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+   overflow: hidden; /* ✅ keeps confetti inside */
+  
+}
+
+/* Pages */
+.page {
+  position: absolute;
+  inset: 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Buttons */
+.next-btn,
+.prev-btn {
+  position: absolute;
+  bottom: 20px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  background: #93c5fd;
+  cursor: pointer;
+}
+
+.next-btn {
+  right: 20px;
+}
+.prev-btn {
+  left: 20px;
+}
+
+/* Flower */
+.flower {
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+
+/* Pig */
+.pig {
+  width: 140px;
+  margin-top: 20px;
+  animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Puzzle */
+.puzzle-container {
+  width: min(90vw, 320px);
+  aspect-ratio: 1 / 1;
+  margin-top: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+#puzzleBoard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.puzzle-tile {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+}
+
+/* Verify Button */
+.verify-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff9f1c;
+  border: none;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Final Message */
+.final-msg {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Message Box */
+.message-box {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: white;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* SHRADDHA BUTTON LINE */
+.shraddha-line {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.shr-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #93c5fd;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.shr-btn.done {
+  background: #ff6b81;
+  color: white;
+}
+
+/* CONFETTI INSIDE BOOK */
+/* CONFETTI INSIDE BOOK */
+.confetti {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  opacity: 1;
+  pointer-events: none;
+  animation: blast 1.2s ease-out forwards;
+}
+
+/* 🎉 Blast Animation */
+@keyframes blast {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(720deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
